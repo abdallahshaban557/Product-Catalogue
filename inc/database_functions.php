@@ -8,7 +8,7 @@ function select()
 	try{
 	include("database_connection.php");
 	//this is where the query is actually executed
-	$results = $db->query("Select * from departments");
+	$results = $db->query("Select * from packages");
 	echo "retrieved results";
 } catch (Exception $e ){
 	
