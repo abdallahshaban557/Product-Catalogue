@@ -12,7 +12,6 @@ try{
 	
 	//shows actual message error
 	echo $e->getMessage();
-	echo "Hello";
 	exit;
 }
 
