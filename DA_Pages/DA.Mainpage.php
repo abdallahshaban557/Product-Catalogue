@@ -6,7 +6,7 @@ include_once 'InitiateClass.php';
 <div class="clearfix"></div>
 
 <div class="container">
-<a href="add-data.php" class="btn btn-large btn-info"><i class="glyphicon glyphicon-plus"></i> &nbsp; Add Records</a>
+<a href="add-DA-data.php" class="btn btn-large btn-info"><i class="glyphicon glyphicon-plus"></i> &nbsp; Add Records</a>
 </div>
 
 <div class="clearfix"></div><br />

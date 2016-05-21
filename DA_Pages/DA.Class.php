@@ -13,7 +13,7 @@ class DA
 	{
 		try
 		{
-			$stmt = $this->db->prepare("INSERT INTO DA(DA_ID,DA_Arabic_Description) VALUES(:DA_ID, :DA_Arabic_Description, :DA_English_Description)");
+			$stmt = $this->db->prepare("INSERT INTO DA(DA_ID,DA_Arabic_Description,DA_English_Description) VALUES(:DA_ID, :DA_Arabic_Description, :DA_English_Description)");
                         $stmt->bindparam(":DA_ID",$DA_ID);
                         $stmt->bindparam(":DA_Arabic_Description",$DA_Arabic_Descritption);
                         $stmt->bindparam(":DA_English_Description",$DA_English_Description);
@@ -30,23 +30,25 @@ class DA
 	
 	public function getID($id)
 	{
-		$stmt = $this->db->prepare("SELECT * FROM DA WHERE id=:id");
+		$stmt = $this->db->prepare("SELECT * FROM DA WHERE DA_ID=:id");
 		$stmt->execute(array(":id"=>$id));
 		$editRow=$stmt->fetch(PDO::FETCH_ASSOC);
 		return $editRow;
 	}
 	
-	public function update($DA_ID,$DA_Arabic_Descritption,$DA_English_Description)
+	public function update($DA_ID,$DA_Arabic_Description,$DA_English_Description,$Old_ID)
 	{
 		try
 		{
 			$stmt=$this->db->prepare("UPDATE DA SET 
                             DA_ID=:DA_ID, 
                             DA_Arabic_Description=:DA_Arabic_Description, 
-                            DA_English_Description=:DA_English_Description");
+                            DA_English_Description=:DA_English_Description
+                            where DA_ID=:Old_ID");
 			$stmt->bindparam(":DA_ID",$DA_ID);
-                        $stmt->bindparam(":DA_Arabic_Description",$DA_Arabic_Descritption);
+                        $stmt->bindparam(":DA_Arabic_Description",$DA_Arabic_Description);
                         $stmt->bindparam(":DA_English_Description",$DA_English_Description);
+                        $stmt->bindparam(":Old_ID",$Old_ID);
 			$stmt->execute();
 			
 			return true;	
@@ -60,7 +62,7 @@ class DA
 	
 	public function delete($id)
 	{
-		$stmt = $this->db->prepare("DELETE FROM da WHERE id=:id");
+		$stmt = $this->db->prepare("DELETE FROM da WHERE DA_id=:id");
 		$stmt->bindparam(":id",$id);
 		$stmt->execute();
 		return true;
@@ -84,10 +86,10 @@ class DA
                 <td><?php print($row['DA_English_Description']); ?></td>
                             
                 <td align="center">
-                <a href="edit-data.php?edit_id=<?php print($row['DA_ID']); ?>"><i class="glyphicon glyphicon-edit"></i></a>
+                <a href="edit-DA-data.php?edit_id=<?php print($row['DA_ID']); ?>"><i class="glyphicon glyphicon-edit"></i></a>
                 </td>
                 <td align="center">
-                <a href="delete.php?delete_id=<?php print($row['DA_ID']); ?>"><i class="glyphicon glyphicon-remove-circle"></i></a>
+                    <a href="delete-DA.php?delete_id=<?php print($row['DA_ID']); ?>"><i class="glyphicon glyphicon-remove-circle"></i></a>
                 </td>
                 </tr>
                 <?php
