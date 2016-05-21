@@ -1,5 +1,5 @@
 <?php
-include_once 'dbconfig.php';
+include_once 'inc/dbconfig.php';
 ?>
 <?php include_once 'header.php'; ?>
 
@@ -26,12 +26,12 @@ include_once 'dbconfig.php';
      </tr>
      <?php
 		$query = "SELECT * FROM packages";       
-		$records_per_page=3;
+		$records_per_page=10;
 		$newquery = $crud->paging($query,$records_per_page);
 		$crud->dataview($newquery);
 	 ?>
     <tr>
-        <td colspan="7" align="center">
+        <td colspan="10" align="center">
  			<div class="pagination-wrap">
             <?php $crud->paginglink($query,$records_per_page); ?>
         	</div>
