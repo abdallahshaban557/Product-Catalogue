@@ -53,7 +53,7 @@ if(isset($_POST['btn-del']))
          <th>Gender</th>
          </tr>
          <?php
-         $stmt = $DB_con->prepare("SELECT * FROM tbl_users WHERE id=:id");
+         $stmt = $DB_con->prepare("SELECT * packages WHERE id=:id");
          $stmt->execute(array(":id"=>$_GET['delete_id']));
          while($row=$stmt->fetch(PDO::FETCH_BOTH))
          {

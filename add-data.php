@@ -2,12 +2,15 @@
 include_once 'dbconfig.php';
 if(isset($_POST['btn-save']))
 {
-	$fname = $_POST['first_name'];
-	$lname = $_POST['last_name'];
-	$email = $_POST['email_id'];
-	$contact = $_POST['contact_no'];
+	$Package_Description = $_POST['Package_Description'];
+	$Billing_Code = $_POST['Billing_Code'];
+	$Service_Class = $_POST['Service_Class'];
+	$SOB = $_POST['SOB'];
+        $Unit_Type_English = $_POST['Unit_Type_English'];
+        $Unit_Type_Arabic = $_POST['Unit_Type_Arabic'];
+        $Total_Units = $_POST['Total_Units'];
 	
-	if($crud->create($fname,$lname,$email,$contact))
+	if($crud->create($Package_Description,$Billing_Code,$Service_Class,$SOB,$Unit_Type_English,$Unit_Type_Arabic,$Total_Units))
 	{
 		header("Location: add-data.php?inserted");
 	}
@@ -53,25 +56,40 @@ else if(isset($_GET['failure']))
     <table class='table table-bordered'>
  
         <tr>
-            <td>First Name</td>
-            <td><input type='text' name='first_name' class='form-control' required></td>
+            <td>Package Description</td>
+            <td><input type='text' name='Package_Description' class='form-control' required></td>
         </tr>
  
         <tr>
-            <td>Last Name</td>
-            <td><input type='text' name='last_name' class='form-control' required></td>
+            <td>Billing Code</td>
+            <td><input type='text' name='Billing_Code' class='form-control' required></td>
         </tr>
  
         <tr>
-            <td>Your E-mail ID</td>
-            <td><input type='text' name='email_id' class='form-control' required></td>
+            <td>Service_Class</td>
+            <td><input type='text' name='Service_Class' class='form-control' required></td>
         </tr>
  
         <tr>
-            <td>Contact No</td>
-            <td><input type='text' name='contact_no' class='form-control' required></td>
+            <td>SOB</td>
+            <td><input type='text' name='SOB' class='form-control' required></td>
         </tr>
  
+          <tr>
+            <td>Unit Type English</td>
+            <td><input type='text' name='Unit_Type_English' class='form-control' required></td>
+        </tr>
+        
+         <tr>
+            <td>Unit Type Arabic</td>
+            <td><input type='text' name='Unit_Type_Arabic' class='form-control' required></td>
+        </tr>
+        
+         <tr>
+            <td>Total Units</td>
+            <td><input type='text' name='Total_Units' class='form-control' required></td>
+        </tr>
+        
         <tr>
             <td colspan="2">
             <button type="submit" class="btn btn-primary" name="btn-save">
