@@ -1,5 +1,6 @@
 <?php
 include_once 'InitiateClass.php';
+$DA_ID = 0;
 if(isset($_POST['btn-update']))
 {
 	$DA_ID = $_POST['DA_ID'];
@@ -54,7 +55,7 @@ if(isset($msg))
 
 <div class="container">
 	 
-     <form method='post'>
+    <form method='post' action ="edit-DA-data.php?edit_id=<?php if(isset($_POST['DA_ID']))  print($_POST['DA_ID']); else print($_GET['edit_id']); ?>">
  
     <table class='table table-bordered'>
  
