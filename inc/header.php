@@ -13,7 +13,7 @@
  
         <div class="navbar-header">
             <a class="navbar-brand" href="../DA_Pages/DA.Mainpage.php" title='DA'>DA Configuration</a>
-            <a class="navbar-brand" href="http://cleartuts.blogspot.com/search/label/CRUD">CRUD</a>
+            <a class="navbar-brand" href="../Packages_Pages/Packages.Mainpage.php" title = 'Packages'>Packages Configuration</a>
             <a class="navbar-brand" href="http://cleartuts.blogspot.com/search/label/PDO">PDO</a>
             <a class="navbar-brand" href="http://cleartuts.blogspot.com/search/label/jQuery">jQuery</a>
         </div>
