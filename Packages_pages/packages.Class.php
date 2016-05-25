@@ -9,14 +9,15 @@ class package
 		$this->db = $DB_con;
 	}
 	
-	public function create($Package_Name,$Billing_Code,$SC,$Package_Or_Service_Lookup,$Eligible_Packages_Lookup,$Market_Lookup)
+	public function create($Package_Name,$Billing_Code,$SC,$SOB,$Package_Or_Service_Lookup,$Eligible_Packages_Lookup,$Market_Lookup)
 	{
 		try
 		{
-			$stmt = $this->db->prepare("INSERT INTO packages(Package_Name,Billing_Code,SC,Package_Or_Service_Lookup,Eligible_Packages_Lookup,Market_Lookup) VALUES(:Package_Name,:Billing_Code,:SC,:Package_Or_Service_Lookup,:Eligible_Packages_Lookup,:Market_Lookup)");
+			$stmt = $this->db->prepare("INSERT INTO packages(Package_Name,Billing_Code,SC,SOB,Package_Or_Service_Lookup,Eligible_Packages_Lookup,Market_Lookup) VALUES(:Package_Name,:Billing_Code,:SC,:SOB,:Package_Or_Service_Lookup,:Eligible_Packages_Lookup,:Market_Lookup)");
                         $stmt->bindparam(":Package_Name",$Package_Name);
                         $stmt->bindparam(":Billing_Code",$Billing_Code);
                         $stmt->bindparam(":SC",$SC);
+                        $stmt->bindparam(":SOB",$SOB);
                         $stmt->bindparam(":Package_Or_Service_Lookup",$Package_Or_Service_Lookup);
                         $stmt->bindparam(":Eligible_Packages_Lookup",$Eligible_Packages_Lookup);
                         $stmt->bindparam(":Market_Lookup",$Market_Lookup);
@@ -39,7 +40,7 @@ class package
 		return $editRow;
 	}
 	
-	public function update($Package_ID,$Package_Name,$Billing_Code,$SC,$Package_Or_Service_Lookup,$Eligible_Packages_Lookup,$Market_Lookup)
+	public function update($Package_ID,$Package_Name,$Billing_Code,$SC,$SOB,$Package_Or_Service_Lookup,$Eligible_Packages_Lookup,$Market_Lookup)
 	{
 		try
 		{
@@ -47,6 +48,7 @@ class package
                             Package_Name=:Package_Name, 
                             Billing_Code=:Billing_Code,
                             SC=:SC,
+                            SOB=:SOB
                             Package_or_Service_Lookup=:Package_or_Service_Lookup,
                             Eligible_Packages_Lookup=:Eligible_Packages_Lookup,
                             Market_Lookup=:Market_Lookup
@@ -54,6 +56,7 @@ class package
 		        $stmt->bindparam(":Package_Name",$Package_Name);
                         $stmt->bindparam(":Billing_Code",$Billing_Code);
                         $stmt->bindparam(":SC",$SC);
+                        $stmt->bindparam(":SOB",$SOB);
                         $stmt->bindparam(":Package_Or_Service_Lookup",$Package_Or_Service_Lookup);
                         $stmt->bindparam(":Eligible_Packages_Lookup",$Eligible_Packages_Lookup);
                         $stmt->bindparam(":Market_Lookup",$Market_Lookup);
@@ -92,6 +95,7 @@ class package
                 <td><?php print($row['Package_Name']); ?></td>
                 <td><?php print($row['Billing_Code']); ?></td>
                 <td><?php print($row['SC']); ?></td>
+                <td><?php print($row['SOB']); ?></td>
                 <td>
                     <?php 
                         $lookup=$this->db->prepare('select * from Package_or_Service where id=:id');

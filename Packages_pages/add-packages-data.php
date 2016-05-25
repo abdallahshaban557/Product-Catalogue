@@ -5,10 +5,12 @@ if(isset($_POST['btn-save']))
 	$Package_Name = $_POST['Package_Name'];
 	$Billing_Code = $_POST['Billing_Code'];
 	$Service_Class = $_POST['Service_Class'];
+	$SOB = $_POST['SOB'];
 	$Package_Or_Service_Lookup = $_POST['Package_Or_Service_Lookup'];
         $Eligible_Packages_Lookup = $_POST['Eligible_Packages_Lookup'];
         $Market_Lookup = $_POST['Market_Lookup'];
-	if($packages->create($Package_Name,$Billing_Code,$Service_Class,$Package_Or_Service_Lookup,$Eligible_Packages_Lookup,$Market_Lookup))
+        
+	if($packages->create($Package_Name,$Billing_Code,$Service_Class,$SOB,$Package_Or_Service_Lookup,$Eligible_Packages_Lookup,$Market_Lookup))
 	{
 		header("Location: add-packages-data.php?inserted");
 	}
@@ -66,6 +68,11 @@ else if(isset($_GET['failure']))
         <tr>
             <td>Service Class</td>
             <td><input type='text' name='Service_Class' class='form-control' required></td>
+        </tr>
+        
+        <tr>
+            <td>SOB</td>
+            <td><input type='text' name='SOB' class='form-control' required></td>
         </tr>
         
         <tr>

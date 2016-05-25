@@ -4,8 +4,8 @@ include_once 'InitiateClass.php';
 if(isset($_POST['btn-del']))
 {
 	$id = $_GET['delete_id'];
-	$da->delete($id);
-	header("Location: delete-DA.php?deleted");	
+	$packages->delete($id);
+	header("Location: delete-packages.php?deleted");	
 }
 
 ?>
@@ -46,20 +46,22 @@ if(isset($_POST['btn-del']))
 		 ?>
          <table class='table table-bordered'>
          <tr>
-         <th>DA ID</th>
-         <th>DA Arabic Description</th>
-         <th>DA English Description</th>
+            <th>Package Name</th>
+             <th>Billing Code</th>
+             <th>Service Class</th>
+             <th>SOB</th>
          </tr>
          <?php
-         $stmt = $DB_con->prepare("SELECT * from da WHERE DA_ID=:id");
+         $stmt = $DB_con->prepare("SELECT * from packages WHERE Package_ID=:id");
          $stmt->execute(array(":id"=>$_GET['delete_id']));
          while($row=$stmt->fetch(PDO::FETCH_BOTH))
          {
              ?>
              <tr>
-             <td><?php print($row['DA_ID']); ?></td>
-             <td><?php print($row['DA_Arabic_Description']); ?></td>
-             <td><?php print($row['DA_English_Description']); ?></td>
+             <td><?php print($row['Package_Name']); ?></td>
+             <td><?php print($row['Billing_Code']); ?></td>
+             <td><?php print($row['SC']); ?></td>
+             <td><?php print($row['SOB']); ?></td>
              </tr>
              <?php
          }
@@ -86,7 +88,7 @@ if(isset($_GET['delete_id']))
 else
 {
 	?>
-<a href="DA.Mainpage.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; Back to index</a>
+<a href="Packages.Mainpage.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; Back to Packages</a>
     <?php
 }
 ?>

@@ -17,6 +17,7 @@ include_once 'InitiateClass.php';
      <th>Package Name</th>
      <th>Billing Code</th>
      <th>Service Class</th>
+     <th>SOB</th>
      <th>Package/Service</th>
      <th>Eligible Packages</th>
      <th>Market</th>
