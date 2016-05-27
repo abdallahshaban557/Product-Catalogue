@@ -15,7 +15,7 @@ if(isset($_POST['btn-update']))
 	if($packages->update($Package_ID,$Package_Name,$Billing_Code,$Service_Class,$SOB,$Package_Or_Service_Lookup,$Eligible_Packages_Lookup,$Market_Lookup))
 	{
 		$msg = "<div class='alert alert-info'>
-				<strong>WOW!</strong> Record was updated successfully <a href='DA.Mainpage.php'>HOME</a>!
+				<strong>WOW!</strong> Record was updated successfully <a href='Packages.Mainpage.php'>HOME</a>!
 				</div>";
 	}
 	else

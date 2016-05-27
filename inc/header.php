@@ -5,6 +5,10 @@
 <title><?php echo $Page_Title;?></title>
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/> 
     <link rel="stylesheet" type="text/css" href="../CSS/CSS_File.css"/>
+    <script type='text/javascript' src='../vendor/components/jquery/jquery.js'/>
+    <script type='text/javascript' src='../vendor/components/jquery/jquery.min.js'/>
+    <script type='text/javascript' src='../vendor/components/jquery/jquery-migrate.js'/>
+    <script type='text/javascript' src='../vendor/components/jquery/jquery-migrate.min.js'/>
 </head>
 
 <body>
