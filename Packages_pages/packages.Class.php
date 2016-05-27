@@ -44,22 +44,23 @@ class package
 	{
 		try
 		{
-			$stmt=$this->db->prepare("UPDATE Packages SET 
-                            Package_Name=:Package_Name, 
-                            Billing_Code=:Billing_Code,
-                            SC=:SC,
-                            SOB=:SOB
-                            Package_or_Service_Lookup=:Package_or_Service_Lookup,
-                            Eligible_Packages_Lookup=:Eligible_Packages_Lookup,
-                            Market_Lookup=:Market_Lookup
-                            where Package_ID=:Package_ID");
-		        $stmt->bindparam(":Package_Name",$Package_Name);
+			$stmt=$this->db->prepare("UPDATE `packages` SET "
+                                . "`Package_Name`=:Package_Name,"
+                                . "`Billing_Code`=:Billing_Code,"
+                                . "`SC`=:SC,"
+                                . "`SOB`=:SOB,"
+                                . "`Package_or_service_Lookup`=:Package_or_service_Lookup,"
+                                . "`Eligible_Packages_Lookup`=:Eligible_Packages_Lookup,"
+                                . "`Market_Lookup`=:Market_Lookup "
+                                . "WHERE Package_ID=:Package_ID");
+                        $stmt->bindparam(":Package_Name",$Package_Name);
                         $stmt->bindparam(":Billing_Code",$Billing_Code);
                         $stmt->bindparam(":SC",$SC);
                         $stmt->bindparam(":SOB",$SOB);
-                        $stmt->bindparam(":Package_Or_Service_Lookup",$Package_Or_Service_Lookup);
+                        $stmt->bindparam(":Package_or_service_Lookup",$Package_Or_Service_Lookup);
                         $stmt->bindparam(":Eligible_Packages_Lookup",$Eligible_Packages_Lookup);
                         $stmt->bindparam(":Market_Lookup",$Market_Lookup);
+                        $stmt->bindparam(":Package_ID",$Package_ID);
 			$stmt->execute();
 			
 			return true;	

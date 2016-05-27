@@ -2,8 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>PDO OOP CRUD using Bootstrap</title>
-<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"> 
+<title><?php echo $Page_Title;?></title>
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/> 
+    <link rel="stylesheet" type="text/css" href="../CSS/CSS_File.css"/>
 </head>
 
 <body>

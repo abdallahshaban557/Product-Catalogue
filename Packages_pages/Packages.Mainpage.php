@@ -1,7 +1,8 @@
 <?php
 include_once 'InitiateClass.php';
-
+$Page_Title = "Packages Main Page";
 ?>
+
 <?php include_once '../inc/header.php'; ?>
 <div class="clearfix"></div>
 
@@ -12,16 +13,16 @@ include_once 'InitiateClass.php';
 <div class="clearfix"></div><br />
 
 <div class="container">
-	 <table class='table table-bordered table-responsive'>
+    <table class='table table-bordered table-responsive'>
      <tr>
-     <th>Package Name</th>
-     <th>Billing Code</th>
-     <th>Service Class</th>
-     <th>SOB</th>
-     <th>Package/Service</th>
-     <th>Eligible Packages</th>
-     <th>Market</th>
-     <th colspan="2" align="center">Actions</th>
+        <th>Package Name</th>
+        <th>Billing Code</th>
+        <th>Service Class</th>
+        <th>SOB</th>
+        <th>Package/Service</th>
+        <th>Eligible Packages</th>
+        <th>Market</th>
+        <th colspan="2" align="center">Actions</th>
      </tr>
      <?php
 		$query = "SELECT * FROM Packages";       
