@@ -1,5 +1,6 @@
 <?php
 include_once 'InitiateClass.php';
+$Page_Title="Edit Packages";
 if(isset($_POST['btn-update']))
 {
 	$Package_Name = $_POST['Package_Name'];

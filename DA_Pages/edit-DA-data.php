@@ -1,5 +1,6 @@
 <?php
 include_once 'InitiateClass.php';
+$Page_Title="Edit DA";
 $DA_ID = 0;
 if(isset($_POST['btn-update']))
 {

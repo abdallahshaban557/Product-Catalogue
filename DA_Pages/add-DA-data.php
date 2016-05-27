@@ -1,5 +1,6 @@
 <?php
 include_once 'initiateClass.php';
+$Page_Title="Add DA";
 if(isset($_POST['btn-save']))
 {
 	$DA_ID = $_POST['DA_ID'];

@@ -1,5 +1,6 @@
 <?php
 include_once 'initiateClass.php';
+$Page_Title="Add Packages";
 if(isset($_POST['btn-save']))
 {
 	$Package_Name = $_POST['Package_Name'];

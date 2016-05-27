@@ -1,6 +1,6 @@
 <?php
 include_once 'InitiateClass.php';
-
+$Page_Title="Delete Packages";
 if(isset($_POST['btn-del']))
 {
 	$id = $_GET['delete_id'];
