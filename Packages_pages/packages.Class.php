@@ -123,7 +123,7 @@ class package
                         $value = $lookup->fetch(PDO::FETCH_ASSOC);
                         print($value['Market_Name']); ?>
                 </td>
-
+            
                             
                 <td align="center">
                 <a href="edit-packages-data.php?edit_id=<?php print($row['Package_ID']); ?>"><i class="glyphicon glyphicon-edit"></i></a>

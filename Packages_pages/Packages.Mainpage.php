@@ -4,9 +4,12 @@ $Page_Title = "Packages Main Page";
 ?>
 
 <?php include_once '../inc/header.php'; ?>
+<!--My modal Box-->
+
 <div class="clearfix"></div>
 
 <div class="container">
+    <td><button id="myBtn" value="6" onclick="getid(this)">Units information</button></td>
 <a href="add-packages-data.php" class="btn btn-large btn-info"><i class="glyphicon glyphicon-plus"></i> &nbsp; Add Records</a>
 </div>
 
@@ -22,7 +25,9 @@ $Page_Title = "Packages Main Page";
         <th>Package/Service</th>
         <th>Eligible Packages</th>
         <th>Market</th>
+        <th>Popup Page</th>  
         <th colspan="2" align="center">Actions</th>
+        <!-- This is where I am testing the popup Page--> 
      </tr>
      <?php
 		$query = "SELECT * FROM Packages";       
@@ -37,10 +42,11 @@ $Page_Title = "Packages Main Page";
         	</div>
         </td>
     </tr>
- 
-</table>
-   
-       
+    </table>
 </div>
+
+<?php include 'Modal Box.php';?>
+
+
 
 <?php include_once '../inc/footer.php'; ?>
