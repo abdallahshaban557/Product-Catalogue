@@ -8,7 +8,7 @@ $Page_Title = "Packages Main Page";
 <div class="clearfix"></div>
 
 <div class="container">
-    <td><button id="myBtn" value="6">Units information</button></td>
+    <td><button id="modalButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="fillReciepant(event)">Open modal for @mdo</button></td>
 <a href="add-packages-data.php" class="btn btn-large btn-info"><i class="glyphicon glyphicon-plus"></i> &nbsp; Add Records</a>
 </div>
 
@@ -23,8 +23,8 @@ $Page_Title = "Packages Main Page";
         <th>SOB</th>
         <th>Package/Service</th>
         <th>Eligible Packages</th>
-        <th>Market</th>
-        <th>Popup Page</th>  
+        <th>Market</th> 
+        <th>Units info</th>
         <th colspan="2" align="center">Actions</th>
         <!-- This is where I am testing the popup Page--> 
      </tr>
@@ -44,7 +44,7 @@ $Page_Title = "Packages Main Page";
     </table>
 </div>
 
-<?php include 'Modal Box.php';?>
+<?php include_once 'Modal Box.php';?>
 
 
 
