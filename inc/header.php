@@ -5,7 +5,16 @@
 <title><?php echo $Page_Title;?></title>
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/> 
     <link rel="stylesheet" type="text/css" href="../CSS/CSS_File.css"/>
-    
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" name="viewport">
+    <title>Material</title>
+
+	<!-- css -->
+<!--    <link href="../css/base.min.css" rel="stylesheet">
+
+	 css for doc 
+    <link href="../css/project.min.css" rel="stylesheet">-->
 </head>
 
 <body>
