@@ -127,6 +127,8 @@ class package
                             
                 <td align="center">
                 <a href="edit-packages-data.php?edit_id=<?php print($row['Package_ID']); ?>"><i class="glyphicon glyphicon-edit"></i></a>
+                <a value="<?php print($row['Package_ID']); ?>" onclick="test(event)"><i value="<?php print($row['Package_ID']); ?>" class="glyphicon glyphicon-edit"></i></a>
+                
                 </td>
                 <td align="center">
                     <a href="delete-packages.php?delete_id=<?php print($row['Package_ID']); ?>"><i class="glyphicon glyphicon-remove-circle"></i></a>

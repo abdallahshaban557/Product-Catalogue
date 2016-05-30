@@ -5,11 +5,10 @@ $Page_Title = "Packages Main Page";
 
 <?php include_once '../inc/header.php'; ?>
 <!--My modal Box-->
-
 <div class="clearfix"></div>
 
 <div class="container">
-    <td><button id="myBtn" value="6" onclick="getid(this)">Units information</button></td>
+    <td><button id="myBtn" value="6">Units information</button></td>
 <a href="add-packages-data.php" class="btn btn-large btn-info"><i class="glyphicon glyphicon-plus"></i> &nbsp; Add Records</a>
 </div>
 

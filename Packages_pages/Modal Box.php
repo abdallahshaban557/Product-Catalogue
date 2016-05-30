@@ -14,6 +14,7 @@
       <h3>Modal Footer</h3>
     </div>
   </div>
-<script type="text/javascript" src="../Javascript/Modal Box Javascript.js"></script>
 </div>
+
+<script type="text/javascript" src="../Javascript/Modal Box Javascript.js"></script>
 
