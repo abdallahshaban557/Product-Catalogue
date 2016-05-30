@@ -207,4 +207,33 @@ class package
 	
 	/* paging */
 	
+        public function modal_dataview($query)
+	{
+		$stmt = $this->db->prepare($query);
+		$stmt->execute();
+	
+		if($stmt->rowCount()>0)
+		{
+			while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+			{
+				?>
+                <tr>
+                <td><?php print($row['Total_Units']); ?></td>
+                <td><?php print($row['DA_ID']); ?></td>
+                
+                <?php
+			}
+		}
+		else
+		{
+			?>
+            </tr><tr>
+            <td>Nothing here...</td>
+            </tr>
+            <?php
+		}
+		
+	}
+        
 }
+
