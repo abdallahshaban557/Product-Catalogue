@@ -8,7 +8,6 @@ $Page_Title = "Packages Main Page";
 <div class="clearfix"></div>
 
 <div class="container">
-    <td><button id="modalButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="fillReciepant(event)">Open modal for @mdo</button></td>
 <a href="add-packages-data.php" class="btn btn-large btn-info"><i class="glyphicon glyphicon-plus"></i> &nbsp; Add Records</a>
 </div>
 

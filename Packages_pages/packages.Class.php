@@ -124,7 +124,7 @@ class package
                         print($value['Market_Name']); ?>
                 </td>
             
-                <td><a class="modalAlert" data-toggle="modal" data-target="#exampleModal" data-whatever="<?php print($row['Package_ID']); ?>" onclick="fillReciepant(event)" value="<?php print($row['Package_ID']); ?>" onclick="test(event)"><i value="<?php print($row['Package_ID']); ?>" class="glyphicon glyphicon-edit"></i></a>            
+                <td><a class="modalAlert" data-toggle="modal" data-target="#exampleModal" value="<?php print($row['Package_Name']); ?>" ><i class="glyphicon glyphicon-edit"></i></a>            
                 <td align="center">
                 <a href="edit-packages-data.php?edit_id=<?php print($row['Package_ID']); ?>"><i class="glyphicon glyphicon-edit"></i></a>   </td>
                 

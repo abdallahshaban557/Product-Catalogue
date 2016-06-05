@@ -67,3 +67,11 @@
     background-color: #5cb85c;
     color: white;
 }
+
+
+/*Table Headers*/
+.table-header{
+text-align:center;
+background-color: #337ab7;
+color: #fff;
+}
