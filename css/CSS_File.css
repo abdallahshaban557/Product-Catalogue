@@ -70,8 +70,8 @@
 
 
 /*Table Headers*/
-.table-header{
+.table-header th{
 text-align:center;
-background-color: #337ab7;
+background-color: #5bc0de;
 color: #fff;
 }

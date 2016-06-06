@@ -14,7 +14,7 @@ $Page_Title = "Packages Main Page";
 <div class="clearfix"></div><br />
 
 <div class="container">
-    <table class='table table-bordered table-responsive'>
+    <table class='table table-bordered table-responsive table-header'>
      <tr>
         <th>Package Name</th>
         <th>Billing Code</th>
