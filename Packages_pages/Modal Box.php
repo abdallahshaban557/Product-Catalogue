@@ -11,6 +11,7 @@
              <tr>
                 <th>Package Name</th>
                 <th>Billing Code</th>
+                <th colspan="2"></th>
                 <!-- This is where I am testing the popup Page--> 
              </tr>
             </table>
