@@ -3,11 +3,11 @@
     <div class="modal-content">
       <div class="modal-header" >
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exampleModalLabel" style="text-align:center">Insert the name of the package here</h4>
+        <h4 class="modal-title" id="modal-name-label" style="text-align:center">Insert the name of the package here</h4>
       </div>
       <div class="modal-body">
             <div class="modal-body">
-            <table class='table table-responsive table-striped table-bordered table-header'>
+            <table id="modal-table" class='table table-responsive table-striped table-bordered table-header'>
              <tr>
                 <th>Package Name</th>
                 <th>Billing Code</th>
