@@ -13,14 +13,6 @@
                 <th>Billing Code</th>
                 <!-- This is where I am testing the popup Page--> 
              </tr>
-             <?php
-                        
-                        $query = "SELECT * FROM total_units";
-                        //$query->bindparam(":filter",$_GET['modal']);
-                        $records_per_page=10;
-                        $newquery = $packages->paging($query,$records_per_page);
-                        $packages->modal_dataview($newquery);
-                 ?>
             </table>
             </div>
        </div>

@@ -9,7 +9,7 @@
 <script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
 
 <!--my own JS document for the modal box in the packages main page-->
-<script type="text/javascript" src="../Javascript/Modal Box Javascript.js"></script>
+<script type="text/javascript" src="../js/Modal Box Javascript.js"></script>
 
 
 <!-- js for material and bootstrap's design and for transitions -->

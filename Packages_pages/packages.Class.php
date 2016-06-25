@@ -207,32 +207,14 @@ class package
 	
 	/* paging */
 	
-        public function modal_dataview($query)
+        public function unites_modal_dataview($Package_ID)
 	{
+            	$query = "SELECT * FROM total_units where Package_ID = :Package_ID";         
 		$stmt = $this->db->prepare($query);
+                $stmt->bindparam(":Package_ID",$Package_ID);
 		$stmt->execute();
-	
-		if($stmt->rowCount()>0)
-		{
-			while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-			{
-				?>
-                <tr>
-                <td><?php print($row['Total_Units']); ?></td>
-                <td><?php print($row['DA_ID']); ?></td>
-                
-                <?php
-			}
-		}
-		else
-		{
-			?>
-            </tr><tr>
-            <td>Nothing here...</td>
-            </tr>
-            <?php
-		}
-		
+                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                return $result;
 	}
         
 }
