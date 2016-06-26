@@ -9,8 +9,8 @@
             <div class="modal-body">
             <table id="modal-table" class='table table-responsive table-striped table-bordered table-header'>
              <tr>
-                <th>Package Name</th>
-                <th>Billing Code</th>
+                <th>Total Units</th>
+                <th>DA ID</th>
                 <th colspan="2"></th>
                 <!-- This is where I am testing the popup Page--> 
              </tr>
