@@ -218,6 +218,14 @@ class package
                 return $result;
 	}
         
+        public function delete_units($Total_Units_ID)
+        {
+                $query = "DELETE from total_units where Total_Units_ID = :Total_Units_ID";
+                $stmt = $this->db->prepare($query);
+                $stmt->bindparam(":Total_Units_ID",$Package_ID);
+		$stmt->execute();
+                return true;
+        }
         
 }
 

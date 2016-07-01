@@ -12,7 +12,7 @@ $Page_Title="DA Main Page"
 <div class="clearfix"></div><br />
 
 <div class="container">
-	 <table class='table table-bordered table-responsive'>
+	 <table class='table table-bordered table-responsive table-header'>
      <tr>
      <th>DA ID</th>
      <th>DA Arabic Description</th>

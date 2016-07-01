@@ -1,5 +1,22 @@
+var global_units_row;
+
 $('.modalAlert').on('click', function () {
- 
+
+//Dialog for setting the confirmation box when deleting units
+    $("#dialog").dialog({
+          autoOpen: false,
+          modal: true,
+          buttons : {
+               "Yes" : function() {
+                   alert("You have confirmed!");   
+                   $( this ).dialog( "close" );
+               },
+               "No" : function() {
+                 $(this).dialog("close");
+               }
+             }
+           });   
+
  //extract the id of the package
   var $Package_ID = $(this).attr("value"); 
   $(".ajax-input").remove();
@@ -71,8 +88,29 @@ $(document).on("click", ".modal-edit-button", function() {
 
 
 
-$(document).on("click", ".modal-delete-button", function() {
+$(document).on("click", ".modal-delete-button", function(e) {
+    
+    var Total_Units_ID = $(this).attr("data-value");
+   
+    global_units_row = $(this).parent().parent();
+   
+   //set the value of the deleted Total_units_ID to the dialog box
+    $("#dialog").attr("data-value",Total_Units_ID);
+   
+    
+    $( "#dialog" ).dialog( "open" );
+ 
+  
+    
+});//End on click event for the modal edit button
+
+
+$(document).on("click", ".modal-save-button", function() {
 
     alert($(this).attr("data-value"));
     
 });//End on click event for the modal edit button
+
+
+//dialog for deleting units
+

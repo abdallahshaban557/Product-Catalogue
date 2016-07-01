@@ -75,3 +75,8 @@ text-align:center;
 background-color: #5bc0de;
 color: #fff;
 }
+
+/*Needed for showing the popup on top of all elements for deleting any units*/
+.ui-dialog { 
+z-index: 100000 !important ;
+}

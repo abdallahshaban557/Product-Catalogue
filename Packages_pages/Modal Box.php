@@ -20,12 +20,22 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-default " data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Save Changes</button>
+          
+<!--          This div is the actual dialog confirming deleting the units.-->
+          <div id="dialog" title="Confirmation Required">
+                 Are you sure about this?
+          </div>​
+          
+          
         </div>
       </div>
          
     </div>
   </div>
+
 </div>
+
+
 
 
 

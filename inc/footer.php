@@ -15,6 +15,8 @@
 <!-- js for material and bootstrap's design and for transitions -->
 <script src="../js/project.min.js"></script>
 <script src="../js/base.min.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script src="https://code.jquery.com/ui/1.12.0-rc.2/jquery-ui.js"></script>
+
 </body>
 </html>
