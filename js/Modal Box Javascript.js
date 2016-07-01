@@ -1,4 +1,4 @@
-var global_units_row;
+var $global_units_row;
 
 $('.modalAlert').on('click', function () {
 
@@ -8,14 +8,43 @@ $('.modalAlert').on('click', function () {
           modal: true,
           buttons : {
                "Yes" : function() {
-                   alert("You have confirmed!");   
+                   //alert("You have confirmed!");   
+                  
+                   //get the total_units_ID that is going to be deleted
+                   var $Total_Units_ID = $("#dialog").attr("data-value");
+
+                   //set the delete UR
+                   var url = "http://localhost/product-catalogue/REST/delete-unites/" + $Total_Units_ID;
+                   
+                   $.get(url, function(data){
+                       if (data == "1")
+                       {
+                           //remove the full row that is being deleted
+                           $global_units_row.remove();
+                           
+                           alert("Success!");     
+                       }
+                       else
+                       {
+                           alert("Error occured, try again later");
+                       }
+                   }).fail(function() {
+                       alert( "error" )
+                   
+                   });//close the AJAX request
+                   
+                  
+                   //close the dialog once done
                    $( this ).dialog( "close" );
+                   
                },
                "No" : function() {
                  $(this).dialog("close");
                }
-             }
-           });   
+             }//close the buttons options brackets
+           });//close the dialog request brackets
+
+ 
 
  //extract the id of the package
   var $Package_ID = $(this).attr("value"); 
@@ -40,8 +69,8 @@ $('.modalAlert').on('click', function () {
       insertedHTML += "<tr class = 'ajax-input'>"
       insertedHTML += "<td class = 'Total_units'>" + unit.Total_Units + "</td>";
       insertedHTML += "<td class = 'DA_ID'>" + unit.DA_ID + "</td>";
-      insertedHTML += "<td class = 'edit-button'><a class = 'glyphicon glyphicon-edit modal-edit-button' data-value = '" + unit.Total_Units_ID + "'></td>";
-      insertedHTML += "<td><a class ='glyphicon glyphicon-remove-circle modal-delete-button delete-button' data-value = '" + unit.Total_Units_ID + "'/></td>";
+      insertedHTML += "<td class = 'edit-button' align='center'><a class = 'glyphicon glyphicon-edit modal-edit-button' data-value = '" + unit.Total_Units_ID + "'></td>";
+      insertedHTML += "<td align='center'><a class ='glyphicon glyphicon-remove-circle modal-delete-button delete-button' data-value = '" + unit.Total_Units_ID + "'/></td>";
       insertedHTML += "</tr>";
       
   });//end each loop
@@ -92,16 +121,18 @@ $(document).on("click", ".modal-delete-button", function(e) {
     
     var Total_Units_ID = $(this).attr("data-value");
    
-    global_units_row = $(this).parent().parent();
+    $global_units_row = $(this).parent().parent();
    
    //set the value of the deleted Total_units_ID to the dialog box
     $("#dialog").attr("data-value",Total_Units_ID);
    
-    
+    //opens the actual dialog box
     $( "#dialog" ).dialog( "open" );
- 
-  
     
+    //sets the position of the confirmation dialog box upon deletion to the center of the table
+    $( "#dialog" ).dialog( "option", "position", { my: "center", at: "center", of: "#modal-table" } );
+   
+
 });//End on click event for the modal edit button
 
 
@@ -111,6 +142,8 @@ $(document).on("click", ".modal-save-button", function() {
     
 });//End on click event for the modal edit button
 
-
-//dialog for deleting units
+//ensure the dialog box is always centered when changing the size of the screen
+$( window ).resize(function() {
+      $( "#dialog" ).dialog( "option", "position", { my: "center", at: "center", of: "#modal-table" } );
+});
 

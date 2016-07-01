@@ -1,4 +1,4 @@
-<div class="modal fade" id="exampleModal" tabindex="-1">
+<div class="modal fade" id="unites-Modal" tabindex="-1">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" >
@@ -22,9 +22,7 @@
           <button type="button" class="btn btn-primary">Save Changes</button>
           
 <!--          This div is the actual dialog confirming deleting the units.-->
-          <div id="dialog" title="Confirmation Required">
-                 Are you sure about this?
-          </div>​
+          <div id="dialog" title="Confirmation Required">Are you sure you want to delete this?</div>​
           
           
         </div>

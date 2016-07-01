@@ -124,7 +124,7 @@ class package
                         print($value['Market_Name']); ?>
                 </td>
             
-                <td><a class="modalAlert" data-toggle="modal" data-target="#exampleModal" value="<?php print($row['Package_ID']); ?>"><i class="glyphicon glyphicon-edit"></i></a>            
+                <td align="center"><a class="modalAlert" data-toggle="modal" data-target="#unites-Modal" value="<?php print($row['Package_ID']); ?>"><i class="glyphicon glyphicon-edit"></i></a>            
                 
                 <td align="center">
                 <a href="edit-packages-data.php?edit_id=<?php print($row['Package_ID']); ?>"><i class="glyphicon glyphicon-edit"></i></a>   </td>
@@ -222,9 +222,18 @@ class package
         {
                 $query = "DELETE from total_units where Total_Units_ID = :Total_Units_ID";
                 $stmt = $this->db->prepare($query);
-                $stmt->bindparam(":Total_Units_ID",$Package_ID);
+                $stmt->bindparam(":Total_Units_ID",$Total_Units_ID);
 		$stmt->execute();
-                return true;
+                
+                //checks if the query actually deleted any records
+                if($stmt->rowCount() > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
         }
         
 }

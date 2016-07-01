@@ -11,21 +11,21 @@ require '../Packages_pages/packages.Class.php';
 //Always need to create an instance of this
 $app = new \Slim\App;
 
-//Test link
-$app->get('/hello/{name}', function (Request $request, Response $response) {
-    $name = $request->getAttribute('name');
-    $response->getBody()->write("Hello, $name");
 
-    return $response;
-});
+//route for deleting a unit
+$app->get("/delete-unites/{Total_Units_ID}", function(Request $request, Response $response){
+    $Total_Units_ID = $request->getAttribute('Total_Units_ID');
+    include_once '../Packages_pages/InitiateClass.php';
+    
+    //actually calls the removal method for the units
+    if($packages->delete_units($Total_Units_ID))
+    {
+        
+        return "1";
+    }
+    
+});//end post request for deleting units
 
-//Test link
-$app->get('/shaban/{name}', function (Request $request, Response $response) {
-    $name = $request->getAttribute('name');
-    $response->getBody()->write("Hello, $name");
-
-    return $response;
-});
 
 
 //Helper functions - might not need to use them all

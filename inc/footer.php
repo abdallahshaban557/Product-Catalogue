@@ -11,6 +11,8 @@
 <!--my own JS document for the modal box in the packages main page-->
 <script type="text/javascript" src="../js/Modal Box Javascript.js"></script>
 
+<!--used for allowing the dialog boxes to be responsive-->
+<script type="text/javascript" src="../js/jquery.dialogOptions.js"></script>
 
 <!-- js for material and bootstrap's design and for transitions -->
 <script src="../js/project.min.js"></script>
