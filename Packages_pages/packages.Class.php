@@ -93,11 +93,11 @@ class package
 			{
 				?>
                 <tr>
-                <td class = "modal-name-label"><?php print($row['Package_Name']); ?></td>
-                <td><?php print($row['Billing_Code']); ?></td>
-                <td><?php print($row['SC']); ?></td>
-                <td><?php print($row['SOB']); ?></td>
-                <td>
+                <td class = "modal-name-label center-cell"><?php print($row['Package_Name']); ?></td>
+                <td class="center-cell"><?php print($row['Billing_Code']); ?></td>
+                <td class="center-cell"><?php print($row['SC']); ?></td>
+                <td class="center-cell"><?php print($row['SOB']); ?></td>
+                <td class="center-cell">
                     <?php 
                         $lookup=$this->db->prepare('select * from Package_or_Service where id=:id');
                         $lookup->bindparam(":id",$row['Package_or_service_Lookup']);
@@ -106,7 +106,7 @@ class package
                         print($value['service_or_offer']); ?>
                           
                 </td>
-                <td>
+                <td class="center-cell">
                     <?php 
                         $lookup=$this->db->prepare('select * from Eligible_Packages_Lookup where Eligible_Packages_id=:id');
                         $lookup->bindparam(":id",$row['Eligible_Packages_Lookup']);
@@ -115,7 +115,7 @@ class package
                         print($value['Eligible_Packages_Name']); ?>
                           
                 </td>
-                <td>
+                <td class="center-cell">
                     <?php 
                         $lookup=$this->db->prepare('select * from market_type where Market_id=:id');
                         $lookup->bindparam(":id",$row['Market_Lookup']);
@@ -124,14 +124,14 @@ class package
                         print($value['Market_Name']); ?>
                 </td>
             
-                <td align="center"><a class="modalAlert" data-toggle="modal" data-target="#unites-Modal" value="<?php print($row['Package_ID']); ?>"><i class="glyphicon glyphicon-edit"></i></a>            
+                <td class="center-cell"><a class="modalAlert" data-toggle="modal" data-target="#unites-Modal" value="<?php print($row['Package_ID']); ?>"><i class="glyphicon glyphicon-edit"></i></a>            
                 
-                <td align="center">
+                <td class="center-cell">
                 <a href="edit-packages-data.php?edit_id=<?php print($row['Package_ID']); ?>"><i class="glyphicon glyphicon-edit"></i></a>   </td>
                 
                 </td>
              
-                <td align="center">
+                <td class="center-cell">
                     <a href="delete-packages.php?delete_id=<?php print($row['Package_ID']); ?>"><i class="glyphicon glyphicon-remove-circle"></i></a>
                 </td>
                 </tr>

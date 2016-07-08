@@ -81,14 +81,14 @@ class DA
 			{
 				?>
                 <tr>
-                <td><?php print($row['DA_ID']); ?></td>
-                <td><?php print($row['DA_Arabic_Description']); ?></td>
-                <td><?php print($row['DA_English_Description']); ?></td>
+                <td class="center-cell"><?php print($row['DA_ID']); ?></td>
+                <td class="center-cell"><?php print($row['DA_Arabic_Description']); ?></td>
+                <td class="center-cell"><?php print($row['DA_English_Description']); ?></td>
                             
-                <td align="center">
+                <td class="center-cell">
                 <a href="edit-DA-data.php?edit_id=<?php print($row['DA_ID']); ?>"><i class="glyphicon glyphicon-edit"></i></a>
                 </td>
-                <td align="center">
+                <td class="center-cell">
                     <a href="delete-DA.php?delete_id=<?php print($row['DA_ID']); ?>"><i class="glyphicon glyphicon-remove-circle"></i></a>
                 </td>
                 </tr>

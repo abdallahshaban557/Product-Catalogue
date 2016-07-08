@@ -7,7 +7,7 @@
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/> 
     <link rel="stylesheet" type="text/css" href="../CSS/My-css-file.css"/>
     
-    <!--Needed stying for the popup confirmation deletion box in delete units-->
+    <!--Needed styling for the popup confirmation deletion box in delete units-->
     <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" name="viewport">

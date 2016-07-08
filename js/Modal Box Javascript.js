@@ -1,4 +1,5 @@
 var $global_units_row;
+var $Package_ID;
 
 $('.modalAlert').on('click', function () {
 
@@ -17,19 +18,20 @@ $('.modalAlert').on('click', function () {
                    var url = "http://localhost/product-catalogue/REST/delete-unites/" + $Total_Units_ID;
                    
                    $.get(url, function(data){
+                       console.log(data);
                        if (data == "1")
                        {
                            //remove the full row that is being deleted
                            $global_units_row.remove();
                            
-                           alert("Success!");     
+                           alert("The record has been deleted successfully!");     
                        }
                        else
                        {
                            alert("Error occured, try again later");
                        }
                    }).fail(function() {
-                       alert( "error" )
+                       alert( "fatal error. Die Infidal !" )
                    
                    });//close the AJAX request
                    
@@ -46,8 +48,8 @@ $('.modalAlert').on('click', function () {
 
  
 
- //extract the id of the package
-  var $Package_ID = $(this).attr("value"); 
+ //set the id of the package
+  $Package_ID = $(this).attr("value"); 
   $(".ajax-input").remove();
 
 //Extract the name of the package, and add it to the top of the modal box name label
@@ -67,10 +69,10 @@ $('.modalAlert').on('click', function () {
   $.each(JSON.parse(response), function(index, unit){
     
       insertedHTML += "<tr class = 'ajax-input'>"
-      insertedHTML += "<td class = 'Total_units'>" + unit.Total_Units + "</td>";
-      insertedHTML += "<td class = 'DA_ID'>" + unit.DA_ID + "</td>";
-      insertedHTML += "<td class = 'edit-button' align='center'><a class = 'glyphicon glyphicon-edit modal-edit-button' data-value = '" + unit.Total_Units_ID + "'></td>";
-      insertedHTML += "<td align='center'><a class ='glyphicon glyphicon-remove-circle modal-delete-button delete-button' data-value = '" + unit.Total_Units_ID + "'/></td>";
+      insertedHTML += "<td class = 'Total_units center-cell'>" + unit.Total_Units + "</td>";
+      insertedHTML += "<td class = 'DA_ID center-cell'>" + unit.DA_ID + "</td>";
+      insertedHTML += "<td class = 'edit-button center-cell'><a class = 'glyphicon glyphicon-edit modal-edit-button' data-value = '" + unit.Total_Units_ID + "'></td>";
+      insertedHTML += "<td class='center-cell'><a class ='glyphicon glyphicon-remove-circle modal-delete-button delete-button' data-value = '" + unit.Total_Units_ID + "'/></td>";
       insertedHTML += "</tr>";
       
   });//end each loop
@@ -98,26 +100,26 @@ $(document).on("click", ".modal-edit-button", function() {
     var $Edit_Button = $parent.children(".edit-button").children(".modal-edit-button");
     
     //store value of the total units and DA ID
-    var Total_Units_value = $Total_Units.text();
-    var DA_ID_value = $DA_ID.text();
+    var Total_Units_value = $Total_Units.text().trim();
+    var DA_ID_value = $DA_ID.text().trim();
     var Total_Units_ID = $Edit_Button.attr("data-value");
     
     
     //define the new parameters with the value from the previous parmaters
-    var $Total_Units_Textbox = "<td><input type = 'text' class = 'Total_units' value = '"+ Total_Units_value +"'></td>";
-    var $DA_ID_Textbox = "<td><input type = 'text' class = 'DA_ID' value ='" + DA_ID_value + "' ></td>"
-    var $Save_Button = "<a class = 'glyphicon glyphicon-plus modal-save-button' data-value = '" + Total_Units_ID + "'></td>";
+    var $Total_Units_Textbox = "<td class = 'center-cell Total_Units_Textbox'><input type = 'text' class = 'Total_Units center-cell reduced-width' value = '" + Total_Units_value + "'></td>";
+    var $DA_ID_Textbox = "<td class = 'center-cell DA_ID_Textbox'><input type = 'text' class = 'DA_ID center-cell reduced-width' value ='" + DA_ID_value + "'  ></td>"
+    var $Save_Button = "<td class = 'center-cell Save_Button'><a class = 'glyphicon glyphicon-plus modal-save-button' data-value = '" + Total_Units_ID + " '></td>";
     
     //Replace the elements with the required values from the previous elements
     $( $Total_Units, ".Total_units" ).replaceWith( $( $Total_Units_Textbox ) );
     $( $DA_ID, ".DA_ID" ).replaceWith( $( $DA_ID_Textbox ) );
-    $( $Edit_Button, ".modal-save-button").replaceWith( $( $Save_Button ) );
+    $( $Edit_Button.parent(), ".edit-button").replaceWith( $( $Save_Button ) );
     
 });//End on click event for the modal edit button
 
 
 
-$(document).on("click", ".modal-delete-button", function(e) {
+$(document).on("click", ".modal-delete-button", function() {
     
     var Total_Units_ID = $(this).attr("data-value");
    
@@ -138,9 +140,39 @@ $(document).on("click", ".modal-delete-button", function(e) {
 
 $(document).on("click", ".modal-save-button", function() {
 
-    alert($(this).attr("data-value"));
+    //retrieve the ID of the total units record
+    var Total_Units_ID = $(this).attr("data-value");
     
+    //retrieve the row that contains the data
+    var $parent = $(this).parent().parent();
+    
+    //alert($parent.prop("tagName")); // This is used just to check if I am replacing the correct element by checking the HTML Tag name
+    
+    //retrieve the old elements that are going to be replaced
+    var $Total_Units = $parent.children(".Total_Units_Textbox").children(".Total_Units");
+    //alert($Total_Units.prop("tagName"));
+    var $DA_ID = $parent.children(".DA_ID_Textbox").children(".DA_ID");
+    var $Save_Button = $parent.children(".Save_Button").children(".modal-save-button");
+    
+    alert($Save_Button.prop("tagName"));
+    
+    //Retrieve the values from the text boxes and keep this cached
+    var Total_Units = $Total_Units.val().trim(); 
+    var DA_ID = $DA_ID.val().trim();
+    
+    //The new elements that are gong to be replaced
+    var $Total_Units_Cell = "<td class = 'Total_units center-cell'>" + Total_Units + "</td>";
+    var $DA_ID_Cell = "<td class = 'DA_ID center-cell'>" + DA_ID + "</td>";
+    var $Edit_Button = "<td class = 'edit-button center-cell'><a class = 'glyphicon glyphicon-edit modal-edit-button' data-value = '" + Total_Units_ID + "'></td>";
+   
+    //Replace the new elements
+    $( $Total_Units.parent(), ".Total_Units_Textbox").replaceWith( $( $Total_Units_Cell ) );
+    $( $DA_ID.parent(), ".DA_ID_Textbox").replaceWith( $( $DA_ID_Cell ) );    
+    $( $Save_Button.parent(), ".modal-save-button").replaceWith( $( $Edit_Button ) );
+
 });//End on click event for the modal edit button
+
+
 
 //ensure the dialog box is always centered when changing the size of the screen
 $( window ).resize(function() {

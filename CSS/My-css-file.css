@@ -80,3 +80,29 @@ color: #fff;
 .ui-dialog { 
 z-index: 100000 !important ;
 }
+
+/*Search div*/
+.search {
+    margin-top : 20px;
+}
+
+/*Search Table*/
+.search-table{
+    border-collapse: separate;
+}
+
+/*padding for the drop down menus*/
+.search-padding
+{
+    padding-right: 10px;
+}
+
+/*Used to ensure that items are centered for all table cells*/
+.center-cell{
+    text-align : center;
+}
+
+/*Used for controlling the width of the textbox*/
+.reduced-width{
+    width : 70px;
+}
