@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="product catalogue debugger" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="127.0.0.1" start_url="/product-catalogue/">
+    <method />
+  </configuration>
+</component>

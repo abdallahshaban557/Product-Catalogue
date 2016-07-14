@@ -1,6 +1,17 @@
 var $global_units_row;
 var $Package_ID;
 
+var Myapp = {
+
+    Global_variables : [{
+
+    global_units_row  : 0,
+    Package_ID : 0
+
+}]
+
+};  //End global variable object
+
 $('.modalAlert').on('click', function () {
 
 //Dialog for setting the confirmation box when deleting units
@@ -22,7 +33,7 @@ $('.modalAlert').on('click', function () {
                        if (data == "1")
                        {
                            //remove the full row that is being deleted
-                           $global_units_row.remove();
+                           Myapp.Global_variables.global_units_row.remove();
                            
                            alert("The record has been deleted successfully!");     
                        }
@@ -49,7 +60,7 @@ $('.modalAlert').on('click', function () {
  
 
  //set the id of the package
-  $Package_ID = $(this).attr("value"); 
+    Myapp.Global_variables.Package_ID = $(this).attr("value");
   $(".ajax-input").remove();
 
 //Extract the name of the package, and add it to the top of the modal box name label
@@ -57,7 +68,7 @@ $('.modalAlert').on('click', function () {
   $("#modal-name-label").text($Package_Name);
   
   //this variable is used for the ajax call
-  var url = "http://localhost/product-catalogue/REST/unites/" + $Package_ID;
+  var url = "http://localhost/product-catalogue/REST/unites/" + Myapp.Global_variables.Package_ID;
   
   //the ajax get call
   $.get(url, function(response){
@@ -122,7 +133,6 @@ $(document).on("click", ".modal-edit-button", function() {
 $(document).on("click", ".modal-delete-button", function() {
     
     var Total_Units_ID = $(this).attr("data-value");
-   
     $global_units_row = $(this).parent().parent();
    
    //set the value of the deleted Total_units_ID to the dialog box
