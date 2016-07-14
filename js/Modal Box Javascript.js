@@ -133,7 +133,8 @@ $(document).on("click", ".modal-edit-button", function() {
 $(document).on("click", ".modal-delete-button", function() {
     
     var Total_Units_ID = $(this).attr("data-value");
-    $global_units_row = $(this).parent().parent();
+
+    Myapp.Global_variables.global_units_row = $(this).parent().parent();
    
    //set the value of the deleted Total_units_ID to the dialog box
     $("#dialog").attr("data-value",Total_Units_ID);
